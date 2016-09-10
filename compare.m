@@ -4,8 +4,8 @@ function [  ] = compare( experiment_num )
     svm_para=sprintf('%s','-s 0 -t 0');
     
 %%%%%%%%%%%%%%debug%%%%%%%%%%%%%%%%%%%%%%%
-end_num = begin_num;
-total_repeat_num = 1;
+% end_num = begin_num;
+% total_repeat_num = 1;
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     
  
