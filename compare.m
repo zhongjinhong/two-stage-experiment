@@ -2,6 +2,12 @@ function [  ] = compare( experiment_num )
     addpath('../tools');
     Initialization();
     svm_para=sprintf('%s','-s 0 -t 0');
+    
+%%%%%%%%%%%%%%debug%%%%%%%%%%%%%%%%%%%%%%%
+end_num = begin_num;
+total_repeat_num = 1;
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    
  
     for num=begin_num:end_num
         for repeat_num=1:total_repeat_num
