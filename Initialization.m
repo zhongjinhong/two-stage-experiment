@@ -51,17 +51,17 @@ switch experiment_num
 
         
         
-    case 14
+    case 10
         input_file_dir='../input data of two stage experiment/test_data/Clustering/';
         output_file_dir='../output data of two stage experiment/test_data/Clustering/';
         total_repeat_num=10;begin_num=1;end_num=10;step_num = 100;count=zeros(2*end_num*step_num,(end_num-begin_num+1)*total_repeat_num); 
         title_name='test_data(Yan Yan''s Data)'; 
-    case 15
+    case 11
         input_file_dir='../input data of two stage experiment/test_data/latent model/';
         output_file_dir='../output data of two stage experiment/test_data/latent model/';
         total_repeat_num=10;begin_num=1;end_num=10;step_num = 100;count=zeros(2*end_num*step_num,(end_num-begin_num+1)*total_repeat_num);  
         title_name='test_data(Raykar''s Data)'; 
-    case 16
+    case 12
         input_file_dir='../input data of two stage experiment/test_data/expertise_difficult_model/';
         output_file_dir='../output data of two stage experiment/test_data/expertise_difficult_model/';
         total_repeat_num=10;begin_num=1;end_num=10;step_num = 100;count=zeros(2*end_num*step_num,(end_num-begin_num+1)*total_repeat_num);  
@@ -91,93 +91,26 @@ switch experiment_num
         title_name='Twitter Topic(Real Data)';
         
 
-    case 29
+    case 25
         input_file_dir='../input data of two stage experiment/Real_Data_AAAI_balance/Clustering/';
         output_file_dir='../output data of two stage experiment/Real_Data_AAAI_balance/Clustering/';
         total_repeat_num=10;begin_num=1;end_num=10;step_num = 100;count=zeros(2*end_num*step_num,total_repeat_num);
         title_name='NER(Clustering)';       
-    case 30
+    case 26
         input_file_dir='../input data of two stage experiment/Real_Data_AAAI_balance/latent model/';
         output_file_dir='../output data of two stage experiment/Real_Data_AAAI_balance/latent model/';
         total_repeat_num=10;begin_num=1;end_num=10;step_num = 100;count=zeros(2*end_num*step_num,total_repeat_num);
         title_name='NER(Raykar''s Data)';                  
-    case 31
+    case 27
         input_file_dir='../input data of two stage experiment/Real_Data_AAAI_balance/expertise_difficult_model/';
         output_file_dir='../output data of two stage experiment/Real_Data_AAAI_balance/expertise_difficult_model/';
         total_repeat_num=10;begin_num=1;end_num=10;step_num = 100;count=zeros(2*end_num*step_num,total_repeat_num);
         title_name='NER(Whitehill''s Data)';       
-    case 32
+    case 28
         input_file_dir='../input data of two stage experiment/Real_Data_AAAI_balance/Real Label/';
         output_file_dir='../output data of two stage experiment/Real_Data_AAAI_balance/Real Label/';
         total_repeat_num=10;begin_num=1;end_num=10;step_num = 100;count=zeros(2*end_num*step_num,total_repeat_num);
         title_name='NER(Real Data)';           
-        
-        
-    case 41
-        input_file_dir ='../input data of two stage experiment/Real Data Standar/Clustering/';
-        output_file_dir='../output data of two stage experiment/Real Data Replicate/Clustering/';
-        total_repeat_num=30;begin_num=1;end_num=11;step_num = 100;count=zeros(2*1000,(end_num-begin_num+1)*total_repeat_num);
-        title_name='Computing time(Yan Yan''s Data)';        
-    case 42
-        input_file_dir ='../input data of two stage experiment/Real Data Standar/latent model/';
-        output_file_dir='../output data of two stage experiment/Real Data Replicate/latent model/';
-        total_repeat_num=30;begin_num=1;end_num=11;step_num = 100;count=zeros(2*1000,(end_num-begin_num+1)*total_repeat_num);
-        title_name='Computing time(Raykar''s Data)'; 
-    case 43
-        input_file_dir ='../input data of two stage experiment/Real Data Standar/expertise_difficult_model/';
-        output_file_dir='../output data of two stage experiment/Real Data Replicate/expertise_difficult_model/';
-        total_repeat_num=30;begin_num=1;end_num=11;step_num = 100;count=zeros(2*1000,(end_num-begin_num+1)*total_repeat_num);
-        title_name='Computing time(Whitehill''s Data)'; 
-    case 44
-        input_file_dir ='../input data of two stage experiment/Real Data Standar/Real Label/';
-        output_file_dir='../output data of two stage experiment/Real Data Replicate/Real Label/';
-        total_repeat_num=30;begin_num=1;end_num=11;step_num = 100;count=zeros(2*1000,(end_num-begin_num+1)*total_repeat_num);
-        title_name='Computing time(Real Data)';    
-        
-    
-    case 45
-        input_file_dir ='../input data of two stage experiment/Real Data Standar/Clustering/';
-        output_file_dir='../output data of two stage experiment/Real Data Random1/Clustering/';
-        total_repeat_num=100;begin_num=1;end_num=11;step_num = 100;count=zeros(2*1000,(end_num-begin_num+1)*total_repeat_num);
-        title_name='Twitter Topic(Clustering data)';        
-    case 46
-        input_file_dir ='../input data of two stage experiment/Real Data Standar/latent model/';
-        output_file_dir='../output data of two stage experiment/Real Data Random1/latent model/';
-        total_repeat_num=100;begin_num=1;end_num=11;step_num = 100;count=zeros(2*1000,(end_num-begin_num+1)*total_repeat_num);
-        title_name='Twitter Topic(Raykar''s Data)'; 
-    case 47
-        input_file_dir ='../input data of two stage experiment/Real Data Standar/expertise_difficult_model/';
-        output_file_dir='../output data of two stage experiment/Real Data Random1/expertise_difficult_model/';
-        total_repeat_num=100;begin_num=1;end_num=11;step_num = 100;count=zeros(2*1000,(end_num-begin_num+1)*total_repeat_num);
-        title_name='Twitter Topic(Whitehill''s Data)'; 
-    case 48
-        input_file_dir ='../input data of two stage experiment/Real Data Standar/Real Label/';
-        output_file_dir='../output data of two stage experiment/Real Data Random1/Real Label/';
-        total_repeat_num=100;begin_num=1;end_num=11;step_num = 100;count=zeros(2*1000,(end_num-begin_num+1)*total_repeat_num);
-        title_name='Twitter Topic(Real Label)';  
 
-
-        
-    case 49
-        input_file_dir ='../input data of two stage experiment/Real Data Standar/Clustering/';
-        output_file_dir='../output data of two stage experiment/Real Data Random2/Clustering/';
-        total_repeat_num=30;begin_num=1;end_num=11;step_num = 100;count=zeros(2*1000,(end_num-begin_num+1)*total_repeat_num);
-        title_name='Twitter Topic(Yan Yan''s Data)';        
-    case 50
-        input_file_dir ='../input data of two stage experiment/Real Data Standar/latent model/';
-        output_file_dir='../output data of two stage experiment/Real Data Random2/latent model/';
-        total_repeat_num=30;begin_num=1;end_num=11;step_num = 100;count=zeros(2*1000,(end_num-begin_num+1)*total_repeat_num);
-        title_name='Twitter Topic(Raykar''s Data)'; 
-    case 51
-        input_file_dir ='../input data of two stage experiment/Real Data Standar/expertise_difficult_model/';
-        output_file_dir='../output data of two stage experiment/Real Data Random2/expertise_difficult_model/';
-        total_repeat_num=30;begin_num=1;end_num=11;step_num = 100;count=zeros(2*1000,(end_num-begin_num+1)*total_repeat_num);
-        title_name='Twitter Topic(Whitehill''s Data)'; 
-    case 52
-        input_file_dir ='../input data of two stage experiment/Real Data Standar/Real Label/';
-        output_file_dir='../output data of two stage experiment/Real Data Random2/Real Label/';
-        total_repeat_num=30;begin_num=11;end_num=11;step_num = 100;count=zeros(2*1000,(end_num-begin_num+1)*total_repeat_num);
-        title_name='Twitter Topic(Real Data)';          
-   
         
 end
