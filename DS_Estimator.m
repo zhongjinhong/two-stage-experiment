@@ -1,4 +1,4 @@
-function [result]=DS_Estimator(Y)
+function [W_DS, G_DS] = DS_Estimator(X,Y)
 
     emusinou=10^(-20);
 %     [n,m]=size(Y);
@@ -44,33 +44,16 @@ function [result]=DS_Estimator(Y)
             result(i,1) = -1;
         end
     end
+    G_DS = result;
     
-%     count=zeros(2*n,1);
-%     for i = 1:n
-%         count(i,1) = 1-miu(i);
-%         count(n+i,1) = miu(i);
-%     end
- 
-%     train_data=[X;X];
-%     train_label=ones(2*n,1);
-%     train_label(1:n,1) = -train_label(1:n,1);
-%     weight=count;
-%     Model=svmtrain(weight,train_label,train_data,svm_para);
-% 
-%     if (sum(weight(1:n))==0)
-%         W =zeros(1,d+1);
-%         W(1,d+1) = 1;
-%     elseif (sum(weight(n+1:2*n))==0)
-%         W =zeros(1,d+1);
-%         W(1,d+1) = -1;
-%     else
-%         W=Model.sv_coef'*Model.SVs;
-%         b=-Model.rho;
-%         W=[W b];
-%         if(Model.Label(1,1)~=1)
-%             W=-W;
-%         end           
-%     end
 
+    X_sparse = sparse([X ones(n,1)]);
+    model_result = train(G_DS,X_sparse);
+    w0= model_result.w;
+    if(model_result.Label(1,1)~=1)
+        w0=-w0;
+    end        
+    
+    W_DS = w0';    
     
 end

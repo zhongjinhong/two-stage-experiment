@@ -1,4 +1,4 @@
-function [ result ] = Majority_Method(Y)
+function [W_MV, G_MV] = Majority_Method(X,Y)
 
     index = find(sum(Y~=-2,2)>0);
     Y = Y(index,:);    
@@ -22,7 +22,17 @@ function [ result ] = Majority_Method(Y)
             end
         end
     end
-    result = Y(:,1);
+    G_MV = Y(:,1);
+    
+    X_sparse = sparse([X ones(n,1)]);
+    model_result = train(G_MV,X_sparse);
+    w0= model_result.w;
+    if(model_result.Label(1,1)~=1)
+        w0=-w0;
+    end        
+    
+    W_MV = w0';
+    
     
 end
 
