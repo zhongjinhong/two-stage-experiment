@@ -11,20 +11,17 @@ function [  ] = compare( experiment_num )
  
     for num=begin_num:end_num
         for repeat_num=1:total_repeat_num
-            switch experiment_num
-                case {1,2,3,4,5,6,7,8,9,12,14,15,16,21,22,23,24,25,26,27,28,29,30,31,32}
-                    file_name=sprintf('%s%s%d%s%d%s',input_file_dir,'X_',num*step_num,'_',repeat_num,'.mat');
-                    load(file_name);  
-                    file_name=sprintf('%s%s%d%s%d%s',input_file_dir,'Y_',num*step_num,'_',repeat_num,'.mat');
-                    load(file_name);  
-                    file_name=sprintf('%s%s%d%s%d%s',input_file_dir,'G_',num*step_num,'_',repeat_num,'.mat');
-                    load(file_name);   
-                    
-                    file_name=sprintf('%s%s%d%s%d%s',input_file_dir,'X_test_',num*step_num,'_',repeat_num,'.mat');
-                    load(file_name);   
-                    file_name=sprintf('%s%s%d%s%d%s',input_file_dir,'G_test_',num*step_num,'_',repeat_num,'.mat');
-                    load(file_name);                       
-            end
+            file_name=sprintf('%s%s%d%s%d%s',input_file_dir,'X_',num*step_num,'_',repeat_num,'.mat');
+            load(file_name);  
+            file_name=sprintf('%s%s%d%s%d%s',input_file_dir,'Y_',num*step_num,'_',repeat_num,'.mat');
+            load(file_name);  
+            file_name=sprintf('%s%s%d%s%d%s',input_file_dir,'G_',num*step_num,'_',repeat_num,'.mat');
+            load(file_name);   
+
+            file_name=sprintf('%s%s%d%s%d%s',input_file_dir,'X_test_',num*step_num,'_',repeat_num,'.mat');
+            load(file_name);   
+            file_name=sprintf('%s%s%d%s%d%s',input_file_dir,'G_test_',num*step_num,'_',repeat_num,'.mat');
+            load(file_name);                       
             
             index = find(sum(Y~=-2,2)>0);
             X = X(index,:);
