@@ -14,7 +14,7 @@ function [p, r] = verified( estimate_accuracy, test_accuracy )
             end
         end
     end
-    p = 1 - count/nchoosek(n,2);
+    p = count/nchoosek(n,2);
     cor = corrcoef(estimate_accuracy,test_accuracy);
     r = cor(1,2);
 end

@@ -3,12 +3,7 @@ function [w0, result]=LFC(X,Y)
     options.TolX=0.1;
     options.MaxFunEvals=1000;
     options.MaxIter=20;
-    emusinou=10^(-6);
-    
-    
-    index = find(sum(Y~=-2,2)>0);
-    X = X(index,:);
-    Y = Y(index,:);        
+    emusinou=10^(-6);      
 
     global X_global miu ai bi;
     X_global=X;

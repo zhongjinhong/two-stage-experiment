@@ -91,7 +91,6 @@ function [  ] = compare( experiment_num )
 %         file_name=sprintf('%s%s',output_file_dir,'count.mat');
 %         save(file_name,'count','-v7.3');
 
-
     end
     [p, r] = verified( estimate_accuracy, test_accuracy );
     file_name=sprintf('%s%s',output_file_dir,'result.mat');

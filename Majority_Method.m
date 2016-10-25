@@ -1,7 +1,5 @@
 function [W_MV, G_MV] = Majority_Method(X,Y)
 
-    index = find(sum(Y~=-2,2)>0);
-    Y = Y(index,:);    
     [n,expert_num]=size(Y);
 
     Y_1 = (Y==1);

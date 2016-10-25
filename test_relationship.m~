@@ -1,0 +1,75 @@
+function [  ] = test_relationship( experiment_num )
+    addpath('../tools');
+    svm_para=sprintf('%s','-s 0 -t 0');
+    switch experiment_num
+        case 1
+            load '../input data of two stage experiment/Adult/Adult.mat';
+            output_file_dir='../output data of two stage experiment/Adult/';
+            total_repeat_num=100;
+        case 2
+            load '../input data of two stage experiment/Conect/conect-4.mat';
+            output_file_dir='../output data of two stage experiment/Conect/';
+            total_repeat_num=100;
+        case 3
+            load '../input data of two stage experiment/mushroom/mushroom.mat';
+            output_file_dir='../output data of two stage experiment/mushroom/';
+            total_repeat_num=100;
+        case 4
+            load '../input data of two stage experiment/test_data/dna.mat';
+            output_file_dir='../output data of two stage experiment/test_data/';
+            total_repeat_num=100;
+        case 5
+            load '../input data of two stage experiment/Real Data/realdata2.mat';
+            output_file_dir='../output data of two stage experiment/Real Data/';
+            total_repeat_num=100;
+        case 6
+            load '../input data of two stage experiment/Real_Data_AAAI_balance/real_data_aaai_balance.mat';
+            output_file_dir='../output data of two stage experiment/Real_Data_AAAI_balance/';
+            total_repeat_num=100;
+    end
+
+    estimate_accuracy = zeros(total_repeat_num,1);
+    test_accuracy = estimate_accuracy;
+    n = size(data,1);
+    train_num = floor(0.9*n);
+    for num=1:total_repeat_num                   
+        index = randomperm(n);
+        data = data(index,:);
+        label = label(index,:);
+        X = data(1:train_num,:);
+        Z = label(1:train_num,:);
+        X_test = data(train_num+1:end,:);
+        label_test = label(train_num+1:end,:);
+
+        wrong_ratio = 0.5 - 0.5*rand();
+        wrong_num = floor(train_num*wrong_ratio);
+        estimate_accuracy(num,1) = wrong_num/train_num;
+        
+        Z(1:wrong_num,:) = -Z(1:wrong_num,:);
+        X_sparse = sparse([X ones(train_num,1)]);
+        model_result = train(Z,X_sparse);
+        w0= model_result.w;
+        if(model_result.Label(1,1)~=1)
+            w0=-w0;
+        end     
+        
+        
+        test_value = X_test*W';
+
+
+        test_accuracy(1:4,(num-begin_num)*total_repeat_num+repeat_num) = exe_test([W_MV W_DS W_LFC W_PC],X_test,G_test);
+
+        estimate_accuracy(1,(num-begin_num)*total_repeat_num+repeat_num) = sum(G_MV.*G==1)/n; 
+        estimate_accuracy(2,(num-begin_num)*total_repeat_num+repeat_num) = sum(G_DS.*G==1)/n;
+        estimate_accuracy(3,(num-begin_num)*total_repeat_num+repeat_num) = sum(G_LFC.*G==1)/n;
+        estimate_accuracy(4,(num-begin_num)*total_repeat_num+repeat_num) = sum(G_PC.*G==1)/n;
+
+        dis_information=sprintf('%s%d  %s%d\n','num=',num,'repeat_num=',repeat_num);
+        disp(dis_information);
+        pause(1)    
+
+    end
+    [p, r] = verified( estimate_accuracy, test_accuracy );
+    file_name=sprintf('%s%s',output_file_dir,'result.mat');
+    save(file_name,'p','r'); 
+end
