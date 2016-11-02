@@ -13,7 +13,7 @@ function [  ] = test_theory( experiment_num )
         case 3
             load '../input data of two stage experiment/mushroom/mushroom.mat';
             output_file_dir='../output data of two stage experiment/mushroom/';
-            tstep = 100;
+            step_num = 100;
         case 4
             load '../input data of two stage experiment/test_data/dna.mat';
             output_file_dir='../output data of two stage experiment/test_data/';
