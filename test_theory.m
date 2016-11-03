@@ -21,7 +21,7 @@ function [  ] = test_theory( experiment_num )
         case 5
             load '../input data of two stage experiment/Real Data/realdata2.mat';
             output_file_dir='../output data of two stage experiment/Real Data/';
-            step_num = 90;array_num = ( (1:15)*2 ).^2;
+            step_num = 90;array_num = ( (1:15)*2 ).^2;array_num(16) = 900;
         case 6
             load '../input data of two stage experiment/Real_Data_AAAI_balance/real_data_aaai_balance.mat';
             output_file_dir='../output data of two stage experiment/Real_Data_AAAI_balance/';
