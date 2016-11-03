@@ -34,13 +34,20 @@ function [  ] = test_theory( experiment_num )
     test_num = ceil(0.1*n);
     total_train_num = n - test_num;
     num = floor( sqrt(total_train_num)/20 );
+    
+    
     data = [data ones(n,1)];    
-    test_accuracy = zeros(11,20);
+    test_accuracy = zeros(11,11);
     
     for i = 1:11
         probability = (i-1)*0.1;
-        for j = 1:20
-            train_num = (j*num)^2;
+        for j = 1:11
+            if j == 11
+                train_num = n - test_num;
+            else
+                train_num = j*step_num;
+            end
+            
             for repeat_num = 1:total_repeat_num
                 index = randperm(n);
                 data = data(index,:);
@@ -72,5 +79,5 @@ function [  ] = test_theory( experiment_num )
     end
     test_accuracy = test_accuracy/total_repeat_num;
     file_name=sprintf('%s%s',output_file_dir,'test_accuracy.mat');
-    save(file_name,'test_accuracy','num');     
+    save(file_name,'test_accuracy');     
 end
