@@ -43,10 +43,10 @@ function [] = handle_theory_result(experiment_num)
     han(9,1)=plot( test_accuracy(9,:),':^k','LineWidth',linewidth,'MarkerFaceColor','w','MarkerSize',MarkerSize);
     han(10,1)=plot(test_accuracy(10,:),'-.ok','LineWidth',linewidth,'MarkerFaceColor','w','MarkerSize',MarkerSize);    
     han(11,1)=plot(test_accuracy(11,:),'--xk','LineWidth',linewidth,'MarkerFaceColor','w','MarkerSize',MarkerSize); 
-    le1=legend(han(1:5),'p=0.0','p=0.1','p=0.2','p=0.3','p=0.4');
+    le1=legend(han(1:5),'p=0','p=0.1','p=0.2');
     set(le1,'Box','off');
     ah=axes('position',get(gca,'position'),'visible','off');
-    le2=legend(ah,han(6:11),'p=0.5','p=0.6','p=0.7','p=0.8','p=0.9','p=1.0');
+    le2=legend(ah,han(6:11),'PMActive','IEThresh');
     set(le2,'Box','off');
 %     temp=[0 10 100];
 %     set(gca,'YTick',log(1+temp)/log(10))
