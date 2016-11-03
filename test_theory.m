@@ -28,7 +28,7 @@ function [  ] = test_theory( experiment_num )
             step_num = 100;
     end
     
-    total_repeat_num=100;
+    total_repeat_num=10;
     
     n = size(data,1);
     test_num = ceil(0.1*n);
