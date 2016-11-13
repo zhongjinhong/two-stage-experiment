@@ -2,10 +2,10 @@ function [] = handle_theory_result(experiment_num)
     switch experiment_num
         case 1
             load '../output data of two stage experiment/Adult/test_accuracy.mat';
-            num = 10;title_name = 'Adult';
+            num = 10;title_name = 'Adult';array_num = array_num(2:2:end);test_accuracy = test_accuracy(:,2:2:end);
         case 2
             load '../output data of two stage experiment/Conect/test_accuracy.mat';
-            num = 12;title_name = 'Conect';
+            num = 12;title_name = 'Conect';array_num = array_num(2:2:end);test_accuracy = test_accuracy(:,2:2:end);
         case 3
             load '../output data of two stage experiment/mushroom/test_accuracy.mat';
             num = 4;array_num = array_num(2:2:end);test_accuracy = test_accuracy(:,2:2:end);
@@ -20,7 +20,7 @@ function [] = handle_theory_result(experiment_num)
             title_name = 'Twitter Topic';
         case 6
             load '../output data of two stage experiment/Real_Data_AAAI_balance/test_accuracy.mat';
-            num = 1;title_name = 'Twitter NER';
+            num = 1;title_name = 'Twitter NER';array_num = array_num(2:2:end);test_accuracy = test_accuracy(:,2:2:end);
     end 
 %     [m,n] = size(test_accuracy);
 %     x = (1:n);
