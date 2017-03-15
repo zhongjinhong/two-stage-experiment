@@ -55,7 +55,7 @@ function [  ] = compare_increase( experiment_num )
                 [W_MV, G_MV] = Majority_Method(X1,Y1); 
                 [W_DS, G_DS] = DS_Estimator(X1,Y1);
                 
-                X1=[X1 ones(n,1)];
+                X1=[X1 ones(instance_num,1)];
                 [W_LFC, G_LFC] = LFC(X1,Y1);
                 [W_PC, G_PC] = PC(X1,Y1);
                 col_num = (step-1)*(end_num-begin_num+1)*total_repeat_num+(num-begin_num)*total_repeat_num+repeat_num;
