@@ -25,10 +25,10 @@ function [  ] = compare_increase( experiment_num )
             file_name=sprintf('%s%s%d%s%d%s',input_file_dir,'G_test_',num*step_num,'_',repeat_num,'.mat');
             load(file_name);                       
             
-            index = find(sum(Y~=-2,2)>0);
-            X = X(index,:);
-            Y = Y(index,:);                                    
-            G = G(index,:);
+%             index = find(sum(Y~=-2,2)>0);
+%             X = X(index,:);
+%             Y = Y(index,:);                                    
+%             G = G(index,:);
             
             n=size(X,1);
             expert_num=size(Y,2);
@@ -46,6 +46,11 @@ function [  ] = compare_increase( experiment_num )
                 X1 = X(1:instance_num,:);
                 Y1 = Y(1:instance_num,:);
                 G1 = G(1:instance_num,:);
+                
+                index = find(sum(Y1~=-2,2)>0);
+                X1 = X1(index,:);
+                Y1 = Y1(index,:);                                    
+                G1 = G1(index,:);      
                 
                 [W_MV, G_MV] = Majority_Method(X1,Y1); 
 %                 [W_DS, G_DS] = DS_Estimator(X1,Y1);
