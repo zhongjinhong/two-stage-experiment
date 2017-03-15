@@ -53,18 +53,18 @@ function [  ] = compare_increase( experiment_num )
                 G1 = G1(index,:);      
                 
                 [W_MV, G_MV] = Majority_Method(X1,Y1); 
-%                 [W_DS, G_DS] = DS_Estimator(X1,Y1);
-%                 
-%                 X1=[X1 ones(n,1)];
-%                 [W_LFC, G_LFC] = LFC(X1,Y1);
-%                 [W_PC, G_PC] = PC(X1,Y1);
+                [W_DS, G_DS] = DS_Estimator(X1,Y1);
+                
+                X1=[X1 ones(n,1)];
+                [W_LFC, G_LFC] = LFC(X1,Y1);
+                [W_PC, G_PC] = PC(X1,Y1);
                 col_num = (step-1)*(end_num-begin_num+1)*total_repeat_num+(num-begin_num)*total_repeat_num+repeat_num;
-%                 test_accuracy(1:4, col_num) = exe_test([W_MV W_DS W_LFC W_PC],X_test,G_test);
+                test_accuracy(1:4, col_num) = exe_test([W_MV W_DS W_LFC W_PC],X_test,G_test);
                 
                 estimate_accuracy(1, col_num) = sum(G_MV.*G1==1)/instance_num; 
-%                 estimate_accuracy(2, col_num) = sum(G_DS.*G1==1)/instance_num;
-%                 estimate_accuracy(3, col_num) = sum(G_LFC.*G1==1)/instance_num;
-%                 estimate_accuracy(4, col_num) = sum(G_PC.*G1==1)/instance_num;
+                estimate_accuracy(2, col_num) = sum(G_DS.*G1==1)/instance_num;
+                estimate_accuracy(3, col_num) = sum(G_LFC.*G1==1)/instance_num;
+                estimate_accuracy(4, col_num) = sum(G_PC.*G1==1)/instance_num;
             end
 
             dis_information=sprintf('%s%d  %s%d\n','num=',num,'repeat_num=',repeat_num);
