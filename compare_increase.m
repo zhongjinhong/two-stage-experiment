@@ -45,7 +45,7 @@ function [  ] = compare_increase( experiment_num )
                 instance_num = array_num(step);
                 X1 = X(1:instance_num,:);
                 Y1 = Y(1:instance_num,:);
-                G1 = G1(1:instance_num,:);
+                G1 = G(1:instance_num,:);
                 
                 [W_MV, G_MV] = Majority_Method(X1,Y1); 
 %                 [W_DS, G_DS] = DS_Estimator(X1,Y1);
