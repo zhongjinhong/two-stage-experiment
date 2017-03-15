@@ -50,7 +50,15 @@ function [  ] = compare_increase( experiment_num )
                 index = find(sum(Y1~=-2,2)>0);
                 X1 = X1(index,:);
                 Y1 = Y1(index,:);                                    
-                G1 = G1(index,:);      
+                G1 = G1(index,:); 
+                col_num = (step-1)*(end_num-begin_num+1)*total_repeat_num+(num-begin_num)*total_repeat_num+repeat_num;
+                
+                instance_num = size(X1,1);
+                if instance_num == 0
+                    test_accuracy(1:4, col_num) = 0.5;
+                    estimate_accuracy(1:4, col_num) = 0.5;
+                    continue
+                end
                 
                 [W_MV, G_MV] = Majority_Method(X1,Y1); 
                 [W_DS, G_DS] = DS_Estimator(X1,Y1);
@@ -58,7 +66,7 @@ function [  ] = compare_increase( experiment_num )
                 X1=[X1 ones(instance_num,1)];
                 [W_LFC, G_LFC] = LFC(X1,Y1);
                 [W_PC, G_PC] = PC(X1,Y1);
-                col_num = (step-1)*(end_num-begin_num+1)*total_repeat_num+(num-begin_num)*total_repeat_num+repeat_num;
+                
                 test_accuracy(1:4, col_num) = exe_test([W_MV W_DS W_LFC W_PC],X_test,G_test);
                 
                 estimate_accuracy(1, col_num) = sum(G_MV.*G1==1)/instance_num; 
