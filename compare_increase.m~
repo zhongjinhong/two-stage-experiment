@@ -41,8 +41,8 @@ function [  ] = compare_increase( experiment_num )
                 end
             end
 
-            for step = 1:step_num
-                instance_num = array_num(step);
+            for pro = 1:step_num
+                instance_num = array(pro);
                 X1 = X(1:instance_num,:);
                 Y1 = Y(1:instance_num,:);
                 G1 = G1(1:instance_num,:);
@@ -53,7 +53,7 @@ function [  ] = compare_increase( experiment_num )
                 X1=[X1 ones(n,1)];
                 [W_LFC, G_LFC] = LFC(X1,Y1);
                 [W_PC, G_PC] = PC(X1,Y1);
-                col_num = (step-1)*(end_num-begin_num+1)*total_repeat_num+(num-begin_num)*total_repeat_num+repeat_num;
+                col_num = (pro-1)*(end_num-begin_num+1)*total_repeat_num+(num-begin_num)*total_repeat_num+repeat_num;
                 test_accuracy(1:4, col_num) = exe_test([W_MV W_DS W_LFC W_PC],X_test,G_test);
                 
                 estimate_accuracy(1, col_num) = sum(G_MV.*G1==1)/instance_num; 

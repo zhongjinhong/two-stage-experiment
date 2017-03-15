@@ -60,12 +60,12 @@ switch experiment_num
         input_file_dir='../input data of two stage experiment/test_data/latent model/';
         output_file_dir='../output data of two stage experiment/test_data/latent model/';
         total_repeat_num=10;begin_num=1;end_num=10;step_num = 100;count=zeros(2*end_num*step_num,(end_num-begin_num+1)*total_repeat_num);  
-        title_name='test_data(Raykar''s Data)'; array_num = ( (1:2:21)*2 ).^2;
+        title_name='test_data(Raykar''s Data)'; 
     case 12
         input_file_dir='../input data of two stage experiment/test_data/expertise_difficult_model/';
         output_file_dir='../output data of two stage experiment/test_data/expertise_difficult_model/';
         total_repeat_num=10;begin_num=1;end_num=10;step_num = 100;count=zeros(2*end_num*step_num,(end_num-begin_num+1)*total_repeat_num);  
-        title_name='test_data(Whitehill''s Data)';array_num = ( (1:2:21)*2 ).^2;         
+        title_name='test_data(Whitehill''s Data)';         
         
  
         
@@ -73,43 +73,44 @@ switch experiment_num
         input_file_dir='../input data of two stage experiment/Real Data/Clustering/';
         output_file_dir='../output data of two stage experiment/Real Data/Clustering/';
         total_repeat_num=10;begin_num=1;end_num=10;step_num = 100;count=zeros(2*end_num*step_num,total_repeat_num);
-        title_name='Twitter Topic(Yan Yan''s Data)';array_num = ( (1:15)*2 ).^2;array_num(16) = 900;
+        title_name='Twitter Topic(Yan Yan''s Data)';
     case 22
         input_file_dir='../input data of two stage experiment/Real Data/latent model/';
         output_file_dir='../output data of two stage experiment/Real Data/latent model/';
         total_repeat_num=10;begin_num=1;end_num=10;step_num = 100;count=zeros(2*end_num*step_num,total_repeat_num);
-        title_name='Twitter Topic(Raykar''s Data)';array_num = ( (1:15)*2 ).^2;array_num(16) = 900;
+        title_name='Twitter Topic(Raykar''s Data)';
     case 23
         input_file_dir='../input data of two stage experiment/Real Data/expertise_difficult_model/';
         output_file_dir='../output data of two stage experiment/Real Data/expertise_difficult_model/';
         total_repeat_num=10;begin_num=1;end_num=10;step_num = 100;count=zeros(2*end_num*step_num,total_repeat_num);
-        title_name='Twitter Topic(Whitehill''s Data)';array_num = ( (1:15)*2 ).^2;array_num(16) = 900;
+        title_name='Twitter Topic(Whitehill''s Data)';
     case 24
         input_file_dir='../input data of two stage experiment/Real Data/Real Label/';
         output_file_dir='../output data of two stage experiment/Real Data/Real Label/';
         total_repeat_num=10;begin_num=1;end_num=10;step_num = 100;count=zeros(2*end_num*step_num,total_repeat_num);
-        title_name='Twitter Topic(Real Data)';array_num = ( (1:15)*2 ).^2;array_num(16) = 900;
+        title_name='Twitter Topic(Real Data)';
         
 
     case 25
         input_file_dir='../input data of two stage experiment/Real_Data_AAAI_balance/Clustering/';
         output_file_dir='../output data of two stage experiment/Real_Data_AAAI_balance/Clustering/';
         total_repeat_num=10;begin_num=1;end_num=10;step_num = 100;count=zeros(2*end_num*step_num,total_repeat_num);
-        title_name='NER(Clustering)';array_num = ( (2:2:18)*2 ).^2;       
+        title_name='NER(Clustering)';       
     case 26
         input_file_dir='../input data of two stage experiment/Real_Data_AAAI_balance/latent model/';
         output_file_dir='../output data of two stage experiment/Real_Data_AAAI_balance/latent model/';
         total_repeat_num=10;begin_num=1;end_num=10;step_num = 100;count=zeros(2*end_num*step_num,total_repeat_num);
-        title_name='NER(Raykar''s Data)';array_num = ( (2:2:18)*2 ).^2;                  
+        title_name='NER(Raykar''s Data)';                  
     case 27
         input_file_dir='../input data of two stage experiment/Real_Data_AAAI_balance/expertise_difficult_model/';
         output_file_dir='../output data of two stage experiment/Real_Data_AAAI_balance/expertise_difficult_model/';
         total_repeat_num=10;begin_num=1;end_num=10;step_num = 100;count=zeros(2*end_num*step_num,total_repeat_num);
-        title_name='NER(Whitehill''s Data)';array_num = ( (2:2:18)*2 ).^2;       
+        title_name='NER(Whitehill''s Data)';       
     case 28
         input_file_dir='../input data of two stage experiment/Real_Data_AAAI_balance/Real Label/';
         output_file_dir='../output data of two stage experiment/Real_Data_AAAI_balance/Real Label/';
         total_repeat_num=10;begin_num=1;end_num=10;step_num = 100;count=zeros(2*end_num*step_num,total_repeat_num);
-        title_name='NER(Real Data)'; array_num = ( (2:2:18)*2 ).^2;           
-   
+        title_name='NER(Real Data)';           
+
+        
 end
