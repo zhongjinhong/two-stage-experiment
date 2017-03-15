@@ -7,9 +7,9 @@ function [  ] = compare_increase( experiment_num )
 % end_num = begin_num+1;
 % total_repeat_num = 2;
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-    step_num = size(array_num,2);
+    step_num_total = size(array_num,2);
 
-    test_accuracy = zeros( 4, step_num*(end_num-begin_num+1)*total_repeat_num  );
+    test_accuracy = zeros( 4, step_num_total*(end_num-begin_num+1)*total_repeat_num  );
     estimate_accuracy = test_accuracy;
     for num=begin_num:end_num
         for repeat_num=1:total_repeat_num
@@ -41,7 +41,7 @@ function [  ] = compare_increase( experiment_num )
                 end
             end
 
-            for step = 1:step_num
+            for step = 1:step_num_total
                 instance_num = array_num(step);
                 X1 = X(1:instance_num,:);
                 Y1 = Y(1:instance_num,:);
